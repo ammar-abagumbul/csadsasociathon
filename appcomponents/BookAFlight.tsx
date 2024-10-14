@@ -1,14 +1,10 @@
 // BookAFlight.tsx
 import React, { useState } from "react";
 import { View, Text, Button, TextInput, StyleSheet } from "react-native";
+import { ScreenNavProps } from "@/types";
 
-const BookAFlight = () => {
+const BookAFlight = ({ navigation }: ScreenNavProps) => {
   const [flightNumber, setFlightNumber] = useState("");
-
-  const handleFlightBooking = () => {
-    // Add functionality for booking a flight
-    alert(`Flight booked with number: ${flightNumber}`);
-  };
 
   return (
     <View style={styles.container}>
@@ -19,7 +15,10 @@ const BookAFlight = () => {
         value={flightNumber}
         onChangeText={setFlightNumber}
       />
-      <Button title="Book Flight" onPress={handleFlightBooking} />
+      <Button
+        title="Book Flight"
+        onPress={() => navigation.navigate("ConfirmationPage")}
+      />
     </View>
   );
 };
