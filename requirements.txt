@@ -1,0 +1,4 @@
+google.generativeai
+google-cloud-aiplatform
+flask
+flask-core
